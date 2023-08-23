@@ -1,1 +1,1 @@
-# GPTNotes
+# GPTNotesCore
