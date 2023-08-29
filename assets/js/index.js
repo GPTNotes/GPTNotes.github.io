@@ -15,4 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
         tryButton.style.display = 'none'; // Hide the tryButton
         tryitForm.style.display = 'block'; // Show the tryit-form content
     };
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        const accountManagement = document.getElementById('signin');
+
+        if (user) {
+            console.log('User signed in:', user);
+
+            accountManagement.href = '/account.html';
+            accountManagement.innerText = 'Account';
+        } else {
+            console.log('User not signed in');
+
+            accountManagement.href = '/signin.html?redirect=/index.html';
+            accountManagement.innerText = 'Sign in';
+        }
+    });
 });
