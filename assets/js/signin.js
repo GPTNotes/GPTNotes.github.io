@@ -51,7 +51,7 @@ function login() {
         .then((userCredential) => {
             console.log('login successful:', userCredential.user);
             // redirect to accounts or perform other actions
-            if (redirectURL != null) { window.location = redirectURL; }
+            if (redirectURL != null) { window.location = redirectURL; } else { window.location = '/index.html'; }
         })
         .catch((error) => {
             if (error.code === 'auth/user-not-found') {
@@ -96,7 +96,7 @@ function signup() {
                             alert('An verification link has been sent to your email. Please check your inbox to verify your account.');
                         })
 
-                    if (redirectURL != null) { window.location = redirectURL; }
+                        if (redirectURL != null) { window.location = redirectURL; } else { window.location = '/index.html'; }
                 })
                 .catch((error) => {
                     console.log('profile update error', error);
