@@ -15,6 +15,7 @@
     <link href="assets/css/index.css" rel="stylesheet">
 </head>
 <script src="assets/js/color-modes.js"></script>
+<script src="assets/js/index.js"></script>
 
 <body class="d-flex h-100 text-center text-bg-dark">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -109,7 +110,15 @@
                 presentations and detailed notes.</p>
             <p class="lead">
                 <div class="d-flex justify-content-center">
-                    <button class="try-btn mb-3 fw-bold mt-5" onclick="window.location='/tryit.html'">Try it</button>
+                    <button class="try-btn mb-3 fw-bold mt-5" id="tryit-btn">Try it</button>
+                </div>
+
+                <div id="tryit-form" style="display: none;">
+                    <form action="/" method="POST" id="form" enctype="multipart/form-data">
+                        <div class="page-content">
+                            <input type="file" id="files" accept=".txt, .pdf, .docx" name="files" required>
+                        </div>
+                    </form>
                 </div>
             </p>
         </main>
@@ -119,6 +128,7 @@
         </footer>
     </div>
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
