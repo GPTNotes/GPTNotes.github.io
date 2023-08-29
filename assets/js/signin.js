@@ -1,3 +1,8 @@
+var url = new URL(window.location.href);
+var searchParams = new URLSearchParams(url.search);
+var redirectURL = searchParams.get('redirect');
+console.log(redirectURL)
+
 function showLogin() {
     document.getElementById('signup-name').value = '';
     document.getElementById('signup-email').value = '';
@@ -45,7 +50,8 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(emailForm, passwordForm)
         .then((userCredential) => {
             console.log('login successful:', userCredential.user);
-            // redirect to accoutns or perform other actions
+            // redirect to accounts or perform other actions
+            if (redirectURL != null) { window.location = redirectURL; }
         })
         .catch((error) => {
             if (error.code === 'auth/user-not-found') {
@@ -89,6 +95,8 @@ function signup() {
                         .then(() => {
                             alert('An verification link has been sent to your email. Please check your inbox to verify your account.');
                         })
+
+                    if (redirectURL != null) { window.location = redirectURL; }
                 })
                 .catch((error) => {
                     console.log('profile update error', error);

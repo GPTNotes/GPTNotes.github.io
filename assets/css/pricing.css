@@ -82,3 +82,18 @@ body {
 .bd-mode-toggle {
   z-index: 1500;
 }
+
+.blur {
+  filter: blur(10px);
+}
+
+#pricing-prompt {
+  font-weight: bold;
+  text-align: center;
+  /* Add other styles as needed */
+}
+
+#pricing-table.disabled {
+  pointer-events: none;
+  opacity: 0.5; /* Optional: Adjust the opacity to visually indicate the disabled state */
+}
