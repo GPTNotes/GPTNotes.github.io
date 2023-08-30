@@ -86,17 +86,17 @@ function signup() {
                         password: passwordForm,
                         subscription_status: 'inactive'
                     })
-                    .then(() => {})
-                    .catch((error) => {
-                        console.log('Failed to save user in firestore: ', error)
-                    })
-
-                    user.sendEmailVerification()
                         .then(() => {
-                            alert('An verification link has been sent to your email. Please check your inbox to verify your account.');
-                        })
+                            user.sendEmailVerification()
+                                .then(() => {
+                                    alert('An verification link has been sent to your email. Please check your inbox to verify your account.');
+                                })
 
-                        if (redirectURL != null) { window.location = redirectURL; } else { window.location = '/index.html'; }
+                            if (redirectURL != null) { window.location = redirectURL; } else { window.location = '/index.html'; }
+                        })
+                        .catch((error) => {
+                            console.log('Failed to save user in firestore: ', error)
+                        })
                 })
                 .catch((error) => {
                     console.log('profile update error', error);
