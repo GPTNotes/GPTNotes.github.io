@@ -90,9 +90,9 @@ function signup() {
                             user.sendEmailVerification()
                                 .then(() => {
                                     alert('An verification link has been sent to your email. Please check your inbox to verify your account.');
-                                })
 
-                            if (redirectURL != null) { window.location = redirectURL; } else { window.location = '/index.html'; }
+                                    if (redirectURL != null) { window.location = redirectURL; } else { window.location = '/index.html'; }
+                                })
                         })
                         .catch((error) => {
                             console.log('Failed to save user in firestore: ', error)
