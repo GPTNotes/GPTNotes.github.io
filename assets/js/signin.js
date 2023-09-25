@@ -43,6 +43,7 @@ function forgotPassword() {
     }
 }
 
+
 function login() {
     const emailForm = document.getElementById('login-email').value;
     const passwordForm = document.getElementById('login-password').value;
