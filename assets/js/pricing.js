@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
           pricingTable.classList.remove('blur');
           pricingPrompt.innerHTML = '';
       } else {
-          console.log('User not signed in');
+          console.log('User is not signed in');
   
           signOutLink.href = '/signin.html?redirect=/pricing.html';
           signOutLink.innerText = 'Sign in';
