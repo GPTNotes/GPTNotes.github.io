@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .catch((error) => {
             console.log('Sign-out error:', error);
-            // Handle sign-out error if needed
+            alert(`An error occured while signing out: ${error}`)
+
+            // handle sign out error
           });
       }
 });
@@ -56,6 +58,5 @@ function getQuote() {
 
 
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
     return randomQuote;
 }

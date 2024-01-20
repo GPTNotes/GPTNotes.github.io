@@ -20,13 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const accountManagement = document.getElementById('signin');
 
         if (user) {
-            console.log('User signed in:', user);
-
             accountManagement.href = '/account.html';
             accountManagement.innerText = 'Account';
         } else {
-            console.log('User not signed in');
-
             accountManagement.href = '/signin.html?redirect=/index.html';
             accountManagement.innerText = 'Sign in';
         }

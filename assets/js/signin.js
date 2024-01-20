@@ -1,7 +1,6 @@
 var url = new URL(window.location.href);
 var searchParams = new URLSearchParams(url.search);
 var redirectURL = searchParams.get('redirect');
-console.log(redirectURL)
 
 function showLogin() {
     document.getElementById('signup-name').value = '';
