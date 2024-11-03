@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gptnotes.iamjerryhu.org/sitemap.xml
